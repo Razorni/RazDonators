@@ -22,8 +22,10 @@ public class RazDonators extends JavaPlugin {
                 if (players.isEmpty()) {
                     players = "No Donators Online";
                 }
-                Bukkit.broadcastMessage(Color.translate("&bOnline Donators&7: ") + ChatColor.WHITE + players);
+                Bukkit.broadcastMessage(Color.translate(" ") + ChatColor.WHITE + players);
+                Bukkit.broadcastMessage(Color.translate("&6Online Donators&7: ") + ChatColor.WHITE + players);
                 Bukkit.broadcastMessage(Color.translate("&7If you want to get featured on list purchase rank."));
+                Bukkit.broadcastMessage(Color.translate(" ") + ChatColor.WHITE + players);
             }
         }.runTaskTimer(this, 200L, 18000L);
       
