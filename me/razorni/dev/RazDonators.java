@@ -27,7 +27,7 @@ public class RazDonators extends JavaPlugin {
                 Bukkit.broadcastMessage(Color.translate("&7If you want to get featured on list purchase rank."));
                 Bukkit.broadcastMessage(Color.translate(" "));
             }
-        }.runTaskTimer(this, 200L, 18000L);
+        }.runTaskTimer(this, 1500L, 1500L);
       
     }
 
