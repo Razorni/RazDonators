@@ -1,2 +1,2 @@
 # RazDonators
-Online Donators Feature
+Online Donators Feature for HCF Servers
