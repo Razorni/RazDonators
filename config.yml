@@ -1,12 +1,12 @@
 #########################
 #                       #
-#   RazDonators 1.0.1   #
+#   RazDonators 1.0.2   #
 #                       #
 #########################
-
 DONATOR-PERMISSION: "online.donator"
-NO-DONATORS-ONLINE: "No Donators"
-EMPTY-LINE-1: " "
-ANNOUNCE-MESSAGE: "&6Online Donators: &r"
-PURCHASE-RANK-MESSAGE: "&7If you want to get featured on this list purchase rank"
-EMPTY-LINE-2: " "
+NO-DONATORS-ONLINE: "&fNo Donators"
+ANNOUNCE-MESSAGE:
+  - ''
+  - '&6Online Donators: &f%donators%'
+  - '&7If you want to be featured on this list purchase rank.'
+  - ''
