@@ -6,18 +6,24 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
-
+import java.io.File;
+import org.bukkit.configuration.file.FileConfiguration;
 import me.razorni.dev.utils.CC;
 import me.razorni.dev.utils.Color;
 
 public class RazDonators extends JavaPlugin {
 	
     public static RazDonators instance;
+    
+    public static File conf;
+	
+    public static FileConfiguration config;
 
     public void onEnable() {
-		Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "[RazDonators] Plugin has been enabled successfully.");
-        instance = this;    
-        getConfig().options().copyDefaults(true);
+	Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "[RazDonators] Plugin has been enabled successfully.");
+        instance = this; 
+        config = getConfig();
+        config.options().copyDefaults(true);
         saveConfig();
         new BukkitRunnable() {
             public void run() {
@@ -25,10 +31,10 @@ public class RazDonators extends JavaPlugin {
                 if (players.isEmpty()) {
                     players = Color.translate(getConfig().getString("NO-DONATORS-ONLINE"));
                 }
-                Bukkit.broadcastMessage(Color.translate(getConfig().getString("EMPTY-LINE-1")));
-                Bukkit.broadcastMessage(Color.translate(getConfig().getString("ANNOUNCE-MESSAGE")) + ChatColor.WHITE + players);
-                Bukkit.broadcastMessage(Color.translate(getConfig().getString("PURCHASE-RANK-MESSAGE")));
-                Bukkit.broadcastMessage(Color.translate(getConfig().getString("EMPTY-LINE-2")));
+                for (String onlinedonator : RazDonators.config.getStringList("ANNOUNCE-MESSAGE")) {
+					getServer().broadcastMessage(
+							ChatColor.translateAlternateColorCodes('&', onlinedonator).replace("%donators%", players));
+				}
             }
         }.runTaskTimer(this, 1500L, 1500L);
       
@@ -41,4 +47,5 @@ public class RazDonators extends JavaPlugin {
     public static RazDonators getInstance() {
         return instance;
       }
+    
 }
