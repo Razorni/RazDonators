@@ -1,11 +1,11 @@
-#########################
-#                       #
-#   RazDonators 1.0.2   #
-#                       #
-#########################
+##############################################################################
+# Author: Razorni                                                            #
+# Discord: Razorni#7254                                                      #
+# Development: https://discord.me/razdev                                     # 
+##############################################################################
 DONATOR-PERMISSION: "online.donator"
 NO-DONATORS-ONLINE: "&fNo Donators"
-ANNOUNCE-MESSAGE:
+ANNOUNCE-MESSAGE: 
   - ''
   - '&6Online Donators: &f%donators%'
   - '&7If you want to be featured on this list purchase rank.'
